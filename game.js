@@ -11,6 +11,7 @@ const frames = [
   [2, 6],
   [8, 1],
 ]
+
 // Score 71 (with spares):
 // const frames = [
 //   [6, 1], [4, 0], [6, 4], [2, 7], [3, 5], [5, 0], [5, 5], [0, 0], [1, 6], [7, 2]
@@ -38,9 +39,11 @@ const frames = [
 // The Function we write must output the expected score from each game.
 // Watch out for strikes and spares and what they mean for each round.
 
-function finalScore(game) {
-  let result = 0
+function scoring(game) {
+  let finalScore = 0
   let roundScore = game.map((round) => round[0] + round[1])
-  console.log(roundScore)
+  finalScore = roundScore.reduce((total, num) => total + num)
+
+  console.log(finalScore)
 }
-finalScore(frames)
+scoring(frames)
