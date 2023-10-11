@@ -41,7 +41,13 @@ const frames = [
 
 function scoring(game) {
   let finalScore = 0
-  let roundScore = game.map((round) => round[0] + round[1])
+  // let roundScore = game.map((round) => round[0] + round[1])
+  let roundScore = game.map((round) => spareFun)
+
+  function spareFun(round) {
+    if (round[0] + round[1] === 10) {
+    }
+  }
   finalScore = roundScore.reduce((total, num) => total + num)
 
   console.log(finalScore)
