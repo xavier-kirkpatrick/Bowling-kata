@@ -11,7 +11,6 @@ const frames = [
   [2, 6],
   [8, 1],
 ]
-
 // Score 71 (with spares):
 // const frames = [
 //   [6, 1], [4, 0], [6, 4], [2, 7], [3, 5], [5, 0], [5, 5], [0, 0], [1, 6], [7, 2]
@@ -39,13 +38,23 @@ const frames = [
 // The Function we write must output the expected score from each game.
 // Watch out for strikes and spares and what they mean for each round.
 // If the current frame = 10, no score is returned untill the next frame is counted and is 0 <
-
+/*
 function scoring(game) {
-  let addAllScores = 0
-  let roundScore = game.map((round) => round[0] + round[1], addAllScores)
-  let finalAccum = 0
-  let addFinalScore = roundScore.reduce((a, b) => a + b, finalAccum)
+  let roundScore = game.map((round) => round[0] + round[1], 0)
+
+  let addFinalScore = roundScore.reduce((a, b) => a + b, 0)
   return addFinalScore
 }
 let gameTotal = scoring(frames)
 console.log(gameTotal)
+
+if (index[0] + indexB === 10) return
+*/
+
+function scoring(game) {
+  let roundScore = game.map((round) => round[0] + round[1], 0)
+
+  let addFinalScore = roundScore.reduce((a, b) => a + b, 0)
+  return addFinalScore
+}
+scoring(frames)
